@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
-import CountyMap from './pages/CountyMap';
+// import CountyMap from './pages/CountyMap';
 import BlogPage from './pages/BlogPage';
 import Navbar from './components/Navbar';
 
