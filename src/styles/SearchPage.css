@@ -1,0 +1,169 @@
+/* Container for the page */
+/* Container for the page */
+.search-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Styles for search results title */
+.search-results-title {
+  margin-top: 0.5%; /* Add top margin to create space from search bar */
+  text-align: center;
+  width: 100%;
+  z-index: 1; /* Ensure it appears above background elements */
+}
+
+.search-results-title h1 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* Center the search bar at the top */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 20px auto;
+  position: relative;
+  z-index: 2; /* Make sure search bar is above other elements */
+}
+
+/* Search bar styles */
+.search-bar {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #444;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border: 2px solid #1e90ff;
+}
+
+.search-bar button {
+  width: 100%;
+  padding: 10px;
+  background-color: #555;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #666;
+}
+
+/* Results container holding both boxes */
+.results-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 40px;
+}
+
+/* Common styles for both result boxes */
+.results-box {
+  width: 48%; /* Nearly half to create space between boxes */
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Specific styles for counter and support results */
+.counter-results {
+  color: #dc3545; /* Red for counter sources */
+}
+
+.support-results {
+  color: #28a745; /* Green for support sources */
+}
+
+/* Adjusting each individual result box for better clarity */
+.result-box {
+  background-color: #444; /* Slightly lighter than the results container */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Soft shadow for emphasis */
+  width: 100%;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.result-box:hover {
+  background-color: #555; /* Darken on hover */
+  transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+.result-box h3 {
+  margin: 0;
+  font-weight: bold; /* Make the title bold */
+}
+
+.result-box p {
+  color: #ccc;
+}
+
+.result-box .support {
+  color: #28a745; /* Green for support */
+  font-weight: bold;
+}
+
+.result-box .contrast {
+  color: #dc3545; /* Red for contrast */
+  font-weight: bold;
+}
+
+/* Loading Circle Styles */
+.loading-circle {
+  position: fixed; /* Make it fixed and on top */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it in the middle */
+  z-index: 9999; /* Ensure it's in front of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+  border-radius: 50%;
+}
+
+.loading-circle::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
