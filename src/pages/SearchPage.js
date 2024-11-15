@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import ResultBox from '../components/ResultBox';
 import LoadingCircle from '../components/LoadingCircle';
+import TextSummarizer from '../components/Summarizer';
+import { pythonURI } from '../assets/js/api/config.js';
 
 import '../styles/SearchPage.css';
 
@@ -16,8 +18,9 @@ const SearchPage = () => {
 
   const search = async () => {
     setIsLoading(true);
-    setIsSearched(true);
-    const response = await fetch('http://127.0.0.1:5000/search', {
+    setIsSearched(true); 
+    const URL_search = pythonURI + '/search';
+    const response = await fetch(URL_search, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ input }),
@@ -29,7 +32,8 @@ const SearchPage = () => {
 
   const summarize = async (link, title) => {
     setLoadingSummarize(link);
-    const response = await fetch('http://127.0.0.1:5000/summarize', {
+    const URL_summarize = pythonURI + '/summarize';
+    const response = await fetch(URL_summarize, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ link }),
